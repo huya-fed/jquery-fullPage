@@ -1,0 +1,6 @@
+{
+    "repos": "https://github.com/alvarotrigo/fullPage.js",
+    "version": "v2.6.6",
+    "name": "jquery-fullPage",
+    "main": "jquery.fullPage.js"
+}
