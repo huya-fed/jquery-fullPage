@@ -4,6 +4,10 @@
 
 > 
 > fullPage.js 是一个基于 jQuery 的插件，它能够很方便、很轻松的制作出全屏网站，主要功能有：
+>
+> https://github.com/alvarotrigo/fullPage.js
+> 
+> http://www.dowebok.com/77.html
 > 
 > - 支持鼠标滚动
 > - 支持前进后退和键盘控制
@@ -71,6 +75,17 @@ jQuery 兼容
 	    </div>
 	    <div class="section">第四屏</div>
 	</div>
+
+
+##Lazy Loading
+
+可以实现图片或者视频的懒加载
+
+	<img data-src="image.png">
+	<video>
+	    <source data-src="video.webm" type="video/webm" />
+	    <source data-src="video.mp4" type="video/mp4" />
+	</video>
 
 
 ##配置
@@ -352,20 +367,28 @@ jQuery 兼容
 			<td>slide 向左滚动</td>
 		</tr>
 		<tr>
-			<td>setAutoScrolling()</td>
-			<td>设置页面滚动方式，设置为 true 时自动滚动</td>
+			<td>setAutoScrolling(boolean)</td>
+			<td>设置页面滚动方式，设置为 true 时隐藏滚动条，false时为显示滚动条</td>
 		</tr>
 		<tr>
-			<td>setAllowScrolling()</td>
+			<td>setAllowScrolling(boolean, [directions])</td>
 			<td>添加或删除鼠标滚轮/触控板控制</td>
 		</tr>
 		<tr>
-			<td>setKeyboardScrolling()</td>
-			<td>添加或删除键盘方向键控制</td>
+			<td>setKeyboardScrolling(boolean, [directions])</td>
+			<td>添加或删除键盘方向键控制 all, up, down, left, right</td>
 		</tr>
 		<tr>
-			<td>setScrollingSpeed()</td>
+			<td>setRecordHistory(boolean)</td>
+			<td>历史记录</td>
+		</tr>
+		<tr>
+			<td>setScrollingSpeed(milliseconds)</td>
 			<td>定义以毫秒为单位的滚动速度</td>
+		</tr>
+		<tr>
+			<td>destroy(type)</td>
+			<td>销毁，type：空或者all</td>
 		</tr>
 	</tbody>
 </table>
@@ -407,6 +430,14 @@ jQuery 兼容
 		<tr>
 			<td>afterResize</td>
 			<td>浏览器窗口变化</td>
+		</tr>
+		<tr>
+			<td>afterSlideLoad </td>
+			<td>进入幻灯片方法 参数：anchorLink, index, slideAnchor, slideIndex</td>
+		</tr>
+		<tr>
+			<td>onSlideLeave</td>
+			<td>离开幻灯片方法 参数：anchorLink, index, slideIndex, direction, nextSlideIndex</td>
 		</tr>
 	</tbody>
 </table>
